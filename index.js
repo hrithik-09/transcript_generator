@@ -71,8 +71,8 @@ app.post('/upload', upload.single('file'), async (req, res) => {
       
       students.push(student);
     }
-    console.log(JSON.stringify(students, null, 2));  // Pretty-print the entire students array
-    console.log(req.body);
+    // console.log(JSON.stringify(students, null, 2));  
+    // console.log(req.body);
     
     res.render('transcript.ejs', { students: students, academicDetails: req.body });
 
@@ -82,7 +82,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
   }
 });
 
-// Start the server
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
