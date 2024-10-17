@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcript Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>PDPM IIITDM Jabalpur</h1>
+        </div>
+        <form action="/upload" method="post" enctype="multipart/form-data" id="transcriptForm">
+            <label for="academicYear">Academic Year</label>
+            <input type="text" name="academicYear" id="academicYear" placeholder="Enter academic year" required>
+
+            <label for="date">Issue Date</label>
+            <input type="date" name="issueDate" id="date" required>
+
+            <label for="semester">Semester</label>
+            <select name="semester" id="semester" required>
+                <option value="" disabled selected>Select semester</option>
+                <option value="I">Semester I</option>
+                <option value="II">Semester II</option>
+                <option value="III">Semester III</option>
+                <option value="IV">Semester IV</option>
+                <option value="V">Semester V</option>
+                <option value="VI">Semester VI</option>
+                <option value="VII">Semester VII</option>
+                <option value="VIII">Semester VIII</option>
+                <option value="IX">Semester IX</option>
+                <option value="X">Semester X</option>
+            </select>
+
+            <label for="discipline">Discipline</label>
+            <select  name="discipline" id="discipline" required>
+                <option value="" disabled selected>Select discipline</option>
+                <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+                <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Smart Manufacturing">Smart Manufacturing</option>
+            </select>
+
+            <label for="programme">Programme</label>
+            <select name="programme" id="programme" required>
+                <option value="" disabled selected>Select programme</option>
+                <option value="Bachelor of Technology">Bachelor of Technology</option>
+                <option value="Master of Technology">Master of Technology</option>
+            </select>
+
+            <label for="uploadFile">Upload Excel File</label>
+            <input type="file"  name="file" id="uploadFile" accept=".xlsx, .xls" required>
+
+            <button type="submit">Upload Data</button>
+        </form>
+    </div>
+</body>
+</html>
