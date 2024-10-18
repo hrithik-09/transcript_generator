@@ -11,26 +11,32 @@
     <% students.forEach(function(student) { %>
     <div class="transcript-container">
         <!-- Student and academic details -->
-        <div>
-            <table>
+        <div class="mini-cont">
+            <table class="student-details">
                 <tr>
-                    <td><strong>Roll No:</strong> <%= student.rollNumber %></td>
-                    <td><strong>Programme:</strong> <%= academicDetails.programme %></td>
+                    <td><strong>Roll No:</strong></td>
+                    <td><%= student.rollNumber %></td>
+                    <td><strong>Programme:</strong> </td>
+                    <td><%= academicDetails.programme %></td>
                 </tr>
                 <tr>
-                    <td><strong>Student Name:</strong> <%= student.name %></td>
-                    <td><strong>Discipline:</strong> <%= academicDetails.discipline %></td>
+                    <td><strong>Student Name:</strong></td>
+                    <td> <%= student.name %></td>
+                    <td><strong>Discipline:</strong> </td>
+                    <td><%= academicDetails.discipline %></td>
                 </tr>
                 <tr>
-                    <td><strong>Semester:</strong> <%= academicDetails.semester %></td>
-                    <td><strong>Academic Year:</strong> <%= academicDetails.academicYear %></td>
+                    <td><strong>Semester:</strong></td>
+                    <td> <%= academicDetails.semester %></td>
+                    <td><strong>Academic Year:</strong> </td>
+                    <td><%= academicDetails.academicYear %></td>
                 </tr>
             </table>
         </div>
 
         <!-- Courses, units, grades -->
         <div>
-            <table>
+            <table class="course-details">
                 <thead>
                     <tr>
                         <th>Course No.</th>
@@ -49,28 +55,70 @@
                     </tr>
                     <% }); %>
                 </tbody>
+                
             </table>
         </div>
 
         <!-- SPI, CPI -->
-        <div>
+        <div class="performance-details">
             <table>
                 <tr>
-                    <td><strong>SPI (Semester Performance Index):</strong> <%= student.spi %></td>
-                    <td><strong>CPI (Cumulative Performance Index):</strong> <%= student.cpi %></td>
+                    <td class="spicpi"><strong>SPI:</strong> <%= student.spi %></td>
+                  
+                    <td><strong>CPI:</strong> <%= student.cpi %></td>
+                
                 </tr>
             </table>
         </div>
 
+        <!-- Grading Points and Symbols -->
+        <div class="grading-instructions">
+            <table>
+                
+                    <tr>
+                        <td>Grading Points</td>
+                        <td class="GPSP"><p>O=10 (Distinguished), A+=10 (Outstanding), A=9 (Excellent), B+=8 (Very Good),</p><p>B=7 (Good), C+=6 (Average), C=5(Below Average), D+=4(Marginal),</p><p>D=3 (Poor), F=2(Very Poor), I=0 (Incomplete), S=0 (Satisfactory),</p><p>X=0 (Unsatisfactory), SS=0 (Special Satisfactory Grade in view of the COVID19)</p></td>
+                    </tr>
+                    <tr>
+                        <td>Special Symbols</td>
+                        <td class="GPSP"><p>SPI: Semester Performance Index</p>
+                            <p>CPI: Cummulative Performance Index</p>
+                            <p>'AU' indicates that the course has been Audited.</p>
+                            <p>'CD' indicates that the course has been dropped due to shortage of attendance</p>
+                            <p>'R' after letter grade indicates that the course has been repeated </p>
+                            <p>'S' after letter grade indicates that the course has been Substituted.</p>
+                        
+                        </td>
+                    </tr>
+                    
+               
+            </table>
+        </div>
+
         <!-- Instructions section -->
-        <div>
-            <p>Grading Points: O=10 (Outstanding), A+=10 (Excellent), A=9 (Very Good), etc.</p>
-            <p>* Medium of instruction is English. Conversion from CPI to Percentage using (CPI*10)% formula.</p>
-            <p>Minimum Graduating CPI: 5.0 &nbsp;&nbsp;&nbsp;&nbsp; Maximum Graduating CPI: 10.0</p>
+
+        <div class="instructions">
+           <table>
+            <tr>
+                <td>
+                <ul>
+                    <li>Medium of instruction is English.</li> 
+                    <li>Conversion from CPI to Percentage using (CPI*10)% formula.</li>
+                   
+                </ul>
+                </td>
+             </tr>
+           </table>
+           <table>
+            <tr >
+                <td id="last-row"> <span>Minimum Graduating CPI: 5.0</span> <span>Maximum Graduating CPI: 10.0</span></td>
+            </tr>
+           </table>
         </div>
 
         <!-- Footer for signature and issue details -->
         <div class="footer">
+            <p>Academic Office</p>
             <p>Issued on: <%= academicDetails.issueDate %></p>
             <p>Assistant/Deputy Registrar</p>
         </div>
