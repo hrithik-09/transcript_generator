@@ -60,23 +60,32 @@ table td,
 table th {
     border: 1px solid black; /* Apply border to table rows, cells, and headers */
 }
-
+table th{
+    font-weight: bold;
+}
 .student-details tr, .student-details th, .student-details td {
     border: none; /* Remove borders from the student details section if needed */
 }
 
-.course-details th {
-    background-color: #f0f0f0;
+.course-details th, .course-details td {
+    border-left:none;
+    border-right:none;
+    border-top: none;
 }
 
 .performance-details td {
     text-align: center;
     font-weight: bold;
+    border-left:none;
+    border-right:none;
+    border-bottom: none;
+    border-top:none;
+
 }
 
 .instructions {
     font-size: 12px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     line-height: 1.5;
 }
 
