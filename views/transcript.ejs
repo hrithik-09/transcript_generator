@@ -12,7 +12,7 @@
     <div class="transcript-container">
         <!-- Student and academic details -->
         <div class="mini-cont">
-            <table class="student-details">
+            <table class="student-details" >
                 <tr>
                     <td><strong>Roll No:</strong></td>
                     <td><%= student.rollNumber %></td>
@@ -43,6 +43,7 @@
                         <th>Course Title</th>
                         <th>Unit</th>
                         <th>Grade</th>
+                        <th>Remarks</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,13 +55,20 @@
                         <td><%= course.grade %></td>
                     </tr>
                     <% }); %>
+                    <tr>
+                        <td> <strong> Result: </strong></td>
+                        <td> <strong> SPI: </strong> <%= student.spi %></td>
+                        <td> <strong> CPI: </strong></td>
+                        <td><%= student.cpi %></td>
+                        <td></td>
+                    </tr>
                 </tbody>
                 
             </table>
         </div>
 
         <!-- SPI, CPI -->
-        <div class="performance-details">
+        <!-- <div class="performance-details">
             <table>
                 <tr>
                     <td ><strong>Result:</strong></td>
@@ -71,24 +79,24 @@
                 
                 </tr>
             </table>
-        </div>
+        </div> -->
 
         <!-- Grading Points and Symbols -->
         <div class="grading-instructions">
             <table>
                 
                     <tr>
-                        <td>Grading Points</td>
+                        <td> <strong> Grading Points </strong> </td>
                         <td class="GPSP"><p>O=10 (Distinguished), A+=10 (Outstanding), A=9 (Excellent), B+=8 (Very Good),</p><p>B=7 (Good), C+=6 (Average), C=5(Below Average), D+=4(Marginal),</p><p>D=3 (Poor), F=2(Very Poor), I=0 (Incomplete), S=0 (Satisfactory),</p><p>X=0 (Unsatisfactory), SS=0 (Special Satisfactory Grade in view of the COVID19)</p></td>
                     </tr>
                     <tr>
-                        <td>Special Symbols</td>
-                        <td class="GPSP"><p>SPI: Semester Performance Index</p>
-                            <p>CPI: Cummulative Performance Index</p>
-                            <p>'AU' indicates that the course has been Audited.</p>
-                            <p>'CD' indicates that the course has been dropped due to shortage of attendance</p>
-                            <p>'R' after letter grade indicates that the course has been repeated </p>
-                            <p>'S' after letter grade indicates that the course has been Substituted.</p>
+                        <td> <strong> Special Symbols </strong></td>
+                        <td class="GPSP"><p> <strong>SPI:</strong> Semester Performance Index</p>
+                            <p> <strong>CPI:</strong> Cummulative Performance Index</p>
+                            <p> <strong> 'AU'</strong> indicates that the course has been Audited.</p>
+                            <p> <strong> 'CD'</strong> indicates that the course has been dropped due to shortage of attendance</p>
+                            <p> <strong> 'R'</strong> after letter grade indicates that the course has been repeated </p>
+                            <p> <strong> 'S'</strong> after letter grade indicates that the course has been Substituted.</p>
                         
                         </td>
                     </tr>
@@ -111,7 +119,7 @@
                 </td>
              </tr>
            </table>
-           <table>
+           <table class="yeda">
             <tr >
                 <td id="last-row"> <span>Minimum Graduating CPI: 5.0</span> <span>Maximum Graduating CPI: 10.0</span></td>
             </tr>
