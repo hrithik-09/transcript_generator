@@ -71,10 +71,21 @@ app.post('/upload', upload.single('file'), async (req, res) => {
       
       students.push(student);
     }
+
+    const inputDate = new Date(req.body.issueDate); 
+    const formattedDate = inputDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+    const academicDetails = {
+      programme: req.body.programme,
+      discipline: req.body.discipline,
+      semester: req.body.semester,
+      academicYear: req.body.academicYear,
+      issueDate: formattedDate  
+    };
     // console.log(JSON.stringify(students, null, 2));  
     // console.log(req.body);
     
-    res.render('transcript.ejs', { students: students, academicDetails: req.body });
+    res.render('transcript.ejs', { students: students, academicDetails: academicDetails });
 
   } catch (error) {
     console.error("Error processing the file: ", error);
