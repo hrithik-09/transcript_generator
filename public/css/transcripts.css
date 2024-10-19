@@ -63,8 +63,9 @@ table th{
     font-weight: bold;
 }
 .grading-instructions td{
-    border-left: none;
-    border-right: none;
+    border-top: none;
+    border-right:none;
+    border-bottom: none;
 }
 .student-details tr, .student-details th, .student-details td {
     border: none; /* Remove borders from the student details section if needed */
@@ -79,15 +80,15 @@ table th{
 .performance-details td {
     text-align: center;
     font-weight: bold;
-    border-left:none;
-    border-right:none;
-    border-bottom: none;
-    border-top:none;
+  border:none;
 
 }
-
+.instruction td{
+    border-top:none;
+}
 .instructions {
     font-size: 12px;
+  
     /* margin-top: 10px; */
     /* line-height: 1.5; */
 }
@@ -135,7 +136,7 @@ table th{
     border-top: none; /* Remove duplicate top borders between stacked tables */
 }
 .mini-cont{
-    border: 2px solid black;
+    border: 1px solid black;
 }
 .student-details td{
     border-left: none;  /* Remove the left border */
