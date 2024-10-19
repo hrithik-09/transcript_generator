@@ -54,7 +54,7 @@ table {
     margin: 0; /* Ensures tables stack without gaps */
 }
 
-table tr, 
+/* table tr,  */
 table td, 
 table th {
     border: 1px solid black;
@@ -74,7 +74,7 @@ table th{
 .course-details th, .course-details td {
     border-left:none;
     border-right:none;
-    border-top: none;
+    /* border-top: none; */
 }
 
 .performance-details td {
@@ -83,9 +83,9 @@ table th{
   border:none;
 
 }
-.instruction td{
+/* .instruction td{
     border-top:none;
-}
+} */
 .instructions {
     font-size: 12px;
   
@@ -137,8 +137,30 @@ table th{
 }
 .mini-cont{
     border: 1px solid black;
+    border-bottom: 0px solid black;
 }
 .student-details td{
     border-left: none;  /* Remove the left border */
     border-right: none;
+}
+.course-details tr{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.grading-instructions table{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.grading-instructions tr{
+    border-bottom: 1px solid black;
+}
+.instructions table,td{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: none !important;
+    border-bottom: none;
+}
+.yeda td{
+    border-left:none !important;
+    border-right: none !important;
 }
