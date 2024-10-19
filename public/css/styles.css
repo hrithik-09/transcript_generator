@@ -1,55 +1,166 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+  
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-size: 12px;
 }
 
-.container {
-    background-color: white;
-    border-radius: 8px;
-    padding: 30px;
-    width: 500px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
+.transcript-container {
+     /* Add a border around the entire container */
+    padding: 10px; /* Remove inner padding to join tables */
+    margin: 20px auto;
+    width: 90%;
+    box-sizing: border-box;
+    page-break-after: always;
 }
 
-h1 {
-    color: #006400; /* Green color */
-}
-
-label {
-    display: block;
-    margin: 10px 0 5px;
-    text-align: left;
-    color: #00008B; /* Blue color */
-}
-
-input, select, button {
+.student-details,
+.course-details,
+.performance-details,
+.grading-instructions {
     width: 100%;
+    margin: 0; /* Remove margin to ensure tables are joined vertically */
+    border-collapse: collapse; /* Collapse borders for seamless join */
+}
+
+.student-details {
+    height: 5vh;
+    font-size: 12px;
     padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+}
+.student-details td{
+    padding: 3px;
 }
 
-button {
-    background-color: #006400; /* Green button */
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.performance-details table, 
+.grading-instructions table {
+    width: 100%;
 }
 
-button:hover {
-    background-color: #004d00;
+.course-details td,
+.course-details th,
+.performance-details td,
+.grading-instructions td,
+.grading-instructions th {
+    padding: 8px;
+    text-align: left;
 }
 
-.header {
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders collapse with no gaps */
+    margin: 0; /* Ensures tables stack without gaps */
+}
+
+/* table tr,  */
+table td, 
+table th {
+    border: 1px solid black;
+}
+table th{
+    font-weight: bold;
+}
+.grading-instructions td{
+    border-top: none;
+    border-right:none;
+    border-bottom: none;
+}
+.student-details tr, .student-details th, .student-details td {
+    border: none; /* Remove borders from the student details section if needed */
+}
+
+.course-details th, .course-details td {
+    border-left:none;
+    border-right:none;
+    /* border-top: none; */
+}
+
+.performance-details td {
+    text-align: center;
+    font-weight: bold;
+  border:none;
+
+}
+/* .instruction td{
+    border-top:none;
+} */
+.instructions {
+    font-size: 12px;
+  
+    /* margin-top: 10px; */
+    /* line-height: 1.5; */
+}
+
+.footer {
+    margin-top: 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    /* border-top: 2px solid #000; Draw a separating border above the footer */
+    padding-top: 10px;
 }
 
+.footer p {
+    font-size: 12px;
+}
+
+#last-row, .spicpi {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#last-row span {
+    font-weight: bold;
+}
+
+/* Modified .GPSP for content containment */
+.GPSP {
+    display: flex;
+    flex-direction: column;
+    contain: content;
+    overflow: hidden; /* Ensures content stays within the td */
+    word-wrap: break-word; /* Breaks long words to fit within the td */
+    max-width: 100%; /* Limits the width to stay within the td */
+}
+
+.GPSP p {
+    font-size: 12px;
+    margin: 0; /* Ensure no extra margin that could push content out of the td */
+}
+
+/* Ensure tables are seamlessly connected */
+.transcript-container table + table {
+    border-top: none; /* Remove duplicate top borders between stacked tables */
+}
+.mini-cont{
+    border: 1px solid black;
+    border-bottom: 0px solid black;
+}
+.student-details td{
+    border-left: none;  /* Remove the left border */
+    border-right: none;
+}
+.course-details tr{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.grading-instructions table{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.grading-instructions tr{
+    border-bottom: 1px solid black;
+}
+.instructions table,td{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: none !important;
+    border-bottom: none;
+}
+.yeda td{
+    border-left:none !important;
+    border-right: none !important;
+}
