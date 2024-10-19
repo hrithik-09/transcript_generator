@@ -1,7 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,12 +26,12 @@ body {
 }
 
 .student-details {
-    height: 15vh;
+    height: 5vh;
     font-size: 12px;
     padding: 10px;
 }
 .student-details td{
-    padding: 10px;
+    padding: 3px;
 }
 
 .performance-details table, 
@@ -58,10 +57,14 @@ table {
 table tr, 
 table td, 
 table th {
-    border: 1px solid black; /* Apply border to table rows, cells, and headers */
+    border: 1px solid black;
 }
 table th{
     font-weight: bold;
+}
+.grading-instructions td{
+    border-left: none;
+    border-right: none;
 }
 .student-details tr, .student-details th, .student-details td {
     border: none; /* Remove borders from the student details section if needed */
@@ -86,7 +89,7 @@ table th{
 .instructions {
     font-size: 12px;
     /* margin-top: 10px; */
-    line-height: 1.5;
+    /* line-height: 1.5; */
 }
 
 .footer {
