@@ -64,7 +64,8 @@ app.post('/upload', upload.single('file'), async (req, res) => {
             title: worksheet[0][col],
             code: worksheet[1][col],   
             unit: worksheet[2][col], 
-            grade: row[col+3]               
+            grade: row[col+3],
+            remarks:row[col]               
           });
         }
       }
