@@ -14,21 +14,21 @@
         <div class="mini-cont">
             <table class="student-details" >
                 <tr>
-                    <td><strong>Roll No:</strong></td>
-                    <td><%= student.rollNumber %></td>
-                    <td><strong>Programme:</strong> </td>
-                    <td><%= academicDetails.programme %></td>
+                    <td style="width:15%">Roll No</td>
+                    <td style="width:35%"><%= student.rollNumber %></td>
+                    <td style="width:20%">Programme </td>
+                    <td style="width:30%"><%= academicDetails.programme %></td>
                 </tr>
                 <tr>
-                    <td><strong>Student Name:</strong></td>
+                    <td>Student Name</td>
                     <td> <%= student.name %></td>
-                    <td><strong>Discipline:</strong> </td>
+                    <td>Discipline </td>
                     <td><%= academicDetails.discipline %></td>
                 </tr>
                 <tr>
-                    <td><strong>Semester:</strong></td>
+                    <td>Semester</td>
                     <td> <%= academicDetails.semester %></td>
-                    <td><strong>Academic Year:</strong> </td>
+                    <td>Academic Year</td>
                     <td><%= academicDetails.academicYear %></td>
                 </tr>
             </table>
@@ -41,27 +41,28 @@
                     <tr>
                         <th>Course No.</th>
                         <th>Course Title</th>
-                        <th>Unit</th>
-                        <th>Grade</th>
-                        <th>Remarks</th>
+                        <th style="text-align: center;" >Unit</th>
+                        <th style="text-align: center;">Grade</th>
+                        <th style="text-align: center;">Remarks</th>
                     </tr>
                 </thead>
                 <tbody>
                     <% student.courses.forEach(function(course) { %>
                     <tr>
-                        <td><%= course.code %></td>
-                        <td><%= course.title %></td>
-                        <td><%= course.unit %></td>
-                        <td><%= course.grade %></td>
-                        <td><%= course.remarks %></td>
+                        <td style="width:15%"><%= course.code %></td>
+                        <td style="width:50%"><%= course.title %></td>
+                        <td style="text-align: center;width:10%"><%= course.unit %></td>
+                        <td style="text-align: center;width:12%"><%= course.grade %></td>
+                        <td style="text-align: center;width:13%"><%= course.remarks %></td>
                     </tr>
                     <% }); %>
                     <tr>
                         <td> <strong> Result: </strong></td>
-                        <td> <strong> SPI: </strong> <%= student.spi %></td>
-                        <td> <strong> CPI: </strong></td>
-                        <td><%= student.cpi %></td>
+                        <td style="display:flex; gap:20vw"> <strong> SPI</strong> <%= student.spi %></td>
+                        <td style="text-align: center;"> <strong> CPI</strong></td>
                         <td></td>
+                        <td style="text-align: center;"><%= student.cpi %></td>
+                       
                     </tr>
                 </tbody>
                 
