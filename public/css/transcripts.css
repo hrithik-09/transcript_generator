@@ -4,7 +4,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 12px;
+    font-size:9pt;
 }
 
 .transcript-container {
@@ -27,11 +27,15 @@ body {
 
 .student-details {
     height: 5vh;
-    font-size: 12px;
+    font-size:9pt;
     padding: 10px;
+    text-transform: uppercase;
 }
 .student-details td{
-    padding: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 
 .performance-details table, 
@@ -87,14 +91,14 @@ table th{
     border-top:none;
 } */
 .instructions {
-    font-size: 12px;
+    font-size:9pt;
   
     /* margin-top: 10px; */
     /* line-height: 1.5; */
 }
 
 .footer {
-    margin-top: 20px;
+    margin-top: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -103,7 +107,7 @@ table th{
 }
 
 .footer p {
-    font-size: 12px;
+    font-size:9pt;
 }
 
 #last-row, .spicpi {
@@ -127,7 +131,7 @@ table th{
 }
 
 .GPSP p {
-    font-size: 12px;
+    font-size:9pt;
     margin: 0; /* Ensure no extra margin that could push content out of the td */
 }
 
@@ -142,6 +146,10 @@ table th{
 .student-details td{
     border-left: none;  /* Remove the left border */
     border-right: none;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    overflow: hidden;    /* Hides the overflowed text */
+    text-overflow: ellipsis; /* Displays ellipsis (...) if text is too long */
+    
 }
 .course-details tr{
     border-left: 1px solid black;
