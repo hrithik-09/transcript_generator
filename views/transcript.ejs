@@ -14,21 +14,22 @@
         <div class="mini-cont">
             <table class="student-details" >
                 <tr>
-                    <td style="width:15%">Roll No</td>
-                    <td style="width:35%"><%= student.rollNumber %></td>
-                    <td style="width:20%">Programme </td>
+                    <td style="width:20%; font-weight:bold;">Roll No</td>
+                    <td style="width:30%"><%= student.rollNumber %></td>
+                    <td style="width:20%; font-weight:bold;">Programme </td>
                     <td style="width:30%"><%= academicDetails.programme %></td>
                 </tr>
                 <tr>
-                    <td>Student Name</td>
-                    <td> <%= student.name %></td>
-                    <td>Discipline </td>
+                    <td style="font-weight:bold;">Student Name</td>
+                    <td style="white-space: normal;
+                    word-break: keep-all; "> <%= student.name %></td>
+                    <td style="font-weight:bold;">Discipline </td>
                     <td><%= academicDetails.discipline %></td>
                 </tr>
                 <tr>
-                    <td>Semester</td>
+                    <td style="font-weight:bold;">Semester</td>
                     <td> <%= academicDetails.semester %></td>
-                    <td>Academic Year</td>
+                    <td style="font-weight:bold;">Academic Year</td>
                     <td><%= academicDetails.academicYear %></td>
                 </tr>
             </table>
@@ -39,37 +40,40 @@
             <table class="course-details">
                 <thead>
                     <tr>
-                        <th>Course No.</th>
-                        <th>Course Title</th>
-                        <th style="text-align: center;" >Unit</th>
-                        <th style="text-align: center;">Grade</th>
-                        <th style="text-align: center;">Remarks</th>
+                        <th >Course No.</th>
+                        <th >Course Title</th>
+                        <th  >Unit</th>
+                        <th >Grade</th>
+                        <th >Special Symbols</th>
                     </tr>
                 </thead>
                 <tbody>
                     <% student.courses.forEach(function(course) { %>
                     <tr>
-                        <td style="width:15%"><%= course.code %></td>
-                        <td style="width:50%"><%= course.title %></td>
-                        <td style="text-align: center;width:10%"><%= course.unit %></td>
-                        <td style="text-align: center;width:12%"><%= course.grade %></td>
-                        <td style="text-align: center;width:13%"><%= course.remarks %></td>
+                        <td style="width: 20%;"><%= course.code %></td>
+                        <td ><%= course.title %></td>
+                        <td ><%= course.unit %></td>
+                        <td><%= course.grade %></td>
+                        <td style="width:20%"><%= course.remarks %></td>
                     </tr>
                     <% }); %>
-                    <tr>
-                        <td> <strong> Result: </strong></td>
-                        <td style="display:flex; gap:20vw"> <strong> SPI</strong> <%= student.spi %></td>
-                        <td style="text-align: center;"> <strong> CPI</strong></td>
-                        <td></td>
-                        <td style="text-align: center;"><%= student.cpi %></td>
-                       
-                    </tr>
+             
                 </tbody>
                 
             </table>
         </div>
 
         <!-- SPI, CPI -->
+        <table>
+            <tr style="border:1px solid black; display: flex; justify-content: space-between; padding-right: 2vw; padding-left: 1vw;" >
+                <td style="border:none;"> <strong> Result </strong></td>
+                <td style=" display:flex; border:none;gap:2vw;"> <strong> SPI</strong> <%= student.spi %></td>
+                <td style="display: flex; border:none;gap:2vw;"> <strong> CPI</strong> <%= student.cpi %></td>
+                
+                <!-- <td style="border:none;"><%= student.cpi %></td> -->
+               
+            </tr>
+        </table>
         <!-- <div class="performance-details">
             <table>
                 <tr>
@@ -89,12 +93,16 @@
                 
                     <tr>
                         <td> <strong> Grading Points </strong> </td>
-                        <td class="GPSP"><p>O=10 (Distinguished), A+=10 (Outstanding), A=9 (Excellent), B+=8 (Very Good),</p><p>B=7 (Good), C+=6 (Average), C=5(Below Average), D+=4(Marginal),</p><p>D=3 (Poor), F=2(Very Poor), I=0 (Incomplete), S=0 (Satisfactory),</p><p>X=0 (Unsatisfactory), SS=0 (Special Satisfactory Grade in view of the COVID19)</p></td>
+                        <td class="GPSP"><p>O=10 (Distinguished), A+=10 (Outstanding), A=9 (Excellent), B+=8 (Very Good),</p><p>B=7 (Good), C+=6 (Average), C=5(Below Average), D+=4(Marginal),</p><p>D=3 (Poor), F=2(Very Poor), I=0 (Incomplete), S=0 (Satisfactory),</p><p>X=0 (Unsatisfactory)</p></td>
+                    </tr>
+                    <tr>
+                        <td> <strong> Abbreviations </strong></td>
+                        <td class="GPSP"><p> <strong>SPI:</strong> Semester Performance Index</p>
+                            <p> <strong>CPI:</strong> Cummulative Performance Index</p></td>
                     </tr>
                     <tr>
                         <td> <strong> Special Symbols </strong></td>
-                        <td class="GPSP"><p> <strong>SPI:</strong> Semester Performance Index</p>
-                            <p> <strong>CPI:</strong> Cummulative Performance Index</p>
+                        <td class="GPSP">
                             <p> <strong> 'AU'</strong> indicates that the course has been Audited.</p>
                             <p> <strong> 'CD'</strong> indicates that the course has been dropped due to shortage of attendance</p>
                             <p> <strong> 'R'</strong> after letter grade indicates that the course has been repeated </p>
@@ -131,7 +139,7 @@
         <!-- Footer for signature and issue details -->
         <div class="footer">
             <p>Academic Office</p>
-            <p>Issued on: <%= academicDetails.issueDate %></p>
+            <p>Issued on <%= academicDetails.issueDate %></p>
             <p>Assistant/Deputy Registrar</p>
         </div>
     </div>
