@@ -80,6 +80,9 @@ table th{
     border-right:none;
     /* border-top: none; */
 }
+.course-details td{
+    border-bottom: none;
+}
 
 .performance-details td {
     text-align: center;
@@ -98,6 +101,7 @@ table th{
 }
 
 .footer {
+    margin-left: 20%;
     margin-top: 10vh;
     display: flex;
     align-items: center;
@@ -146,9 +150,9 @@ table th{
 .student-details td{
     border-left: none;  /* Remove the left border */
     border-right: none;
-    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    /* white-space: nowrap; Prevents text from wrapping to the next line */
     overflow: hidden;    /* Hides the overflowed text */
-    text-overflow: ellipsis; /* Displays ellipsis (...) if text is too long */
+    /* text-overflow: ellipsis; Displays ellipsis (...) if text is too long */
     
 }
 .course-details tr{
