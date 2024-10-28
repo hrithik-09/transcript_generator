@@ -32,7 +32,7 @@ body {
     text-transform: uppercase;
 }
 .student-details td{
-    padding-left: 3px;
+    padding-left: 1vw;
     padding-right: 3px;
     padding-top: 6px;
     padding-bottom: 6px;
