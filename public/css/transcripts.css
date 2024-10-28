@@ -26,7 +26,7 @@ body {
 }
 
 .student-details {
-    height: 5vh;
+    /* height: 5vh; */
     font-size:9pt;
     padding: 10px;
     text-transform: uppercase;
@@ -101,13 +101,13 @@ table th{
 }
 
 .footer {
-    margin-left: 20%;
+    margin-left: 15%;
+    margin-right: 15%;
     margin-top: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* border-top: 2px solid #000; Draw a separating border above the footer */
-    padding-top: 10px;
+  
 }
 
 .footer p {
