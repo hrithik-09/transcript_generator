@@ -28,14 +28,17 @@ body {
 .student-details {
     /* height: 5vh; */
     font-size:9pt;
-    padding: 10px;
+   
     text-transform: uppercase;
 }
+.less-bold{
+    padding:none;
+}
 .student-details td{
-    padding-left: 1vw;
-    padding-right: 3px;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    /* padding-left: 1vw; */
+    /* padding-right: 1px; */
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 .performance-details table, 
@@ -48,7 +51,7 @@ body {
 .performance-details td,
 .grading-instructions td,
 .grading-instructions th {
-    padding: 8px;
+    padding: 3px;
     text-align: left;
 }
 
@@ -74,6 +77,11 @@ table th{
 .student-details tr, .student-details th, .student-details td {
     border: none; /* Remove borders from the student details section if needed */
 }
+.mini-cont table tr{
+    padding: 3px;
+}.mini-cont{
+    padding: 3px 5px;
+}
 
 .course-details th, .course-details td {
     border-left:none;
@@ -93,9 +101,14 @@ table th{
 /* .instruction td{
     border-top:none;
 } */
-.instructions {
+.instructions tr td  {
     font-size:9pt;
-  
+    padding: none;
+    /* height: 1.5vh; */
+
+    
+    /* align-items: center; */
+    /* padding: 0; */
     /* margin-top: 10px; */
     /* line-height: 1.5; */
 }
@@ -171,6 +184,7 @@ table th{
     border-right: 1px solid black;
     border-top: none !important;
     border-bottom: none;
+    padding: 0;
 }
 .yeda td{
     border-left:none !important;
