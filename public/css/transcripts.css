@@ -198,9 +198,9 @@ table th{
 
 @media print {
     @page {
-        margin-top: 5.5cm; /* Adds a 2 cm margin at the top of every printed page */
+        margin-top: 7.6cm; /* Adds a 2 cm margin at the top of every printed page */
         /* margin-bottom: 1cm; Optional: add margins on other sides as needed */
-        margin-left: 1cm;
+        margin-left: 0.8cm;
         margin-right: 1cm;
     }
 
