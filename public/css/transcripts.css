@@ -37,8 +37,8 @@ body {
 .student-details td{
     /* padding-left: 1vw; */
     /* padding-right: 1px; */
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 .performance-details table, 
@@ -46,15 +46,16 @@ body {
     width: 100%;
 }
 
-.course-details td,
-.course-details th,
 .performance-details td,
 .grading-instructions td,
 .grading-instructions th {
     padding: 3px;
     text-align: left;
 }
-
+.course-details td ,.course-details th{
+    padding-left: 3px;
+    text-align: left;
+}
 table {
     width: 100%;
     border-collapse: collapse; /* Ensures borders collapse with no gaps */
@@ -90,6 +91,7 @@ table th{
 }
 .course-details td{
     border-bottom: none;
+
 }
 
 .performance-details td {
@@ -171,6 +173,9 @@ table th{
 .course-details tr{
     border-left: 1px solid black;
     border-right: 1px solid black;
+}
+.course-details{
+    padding: 3px;
 }
 .grading-instructions table{
     border-left: 1px solid black;
