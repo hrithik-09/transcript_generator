@@ -37,8 +37,8 @@ body {
 .student-details td{
     /* padding-left: 1vw; */
     /* padding-right: 1px; */
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 .performance-details table, 
@@ -116,8 +116,8 @@ table th{
 }
 
 .footer {
-    margin-left: 15%;
-    margin-right: 15%;
+    /* margin-left: 15%;
+    margin-right: 15%; */
     margin-top: 10vh;
     display: flex;
     align-items: center;
@@ -189,9 +189,27 @@ table th{
     border-right: 1px solid black;
     border-top: none !important;
     border-bottom: none;
-    padding: 0;
+    padding: 3px;
 }
 .yeda td{
     border-left:none !important;
     border-right: none !important;
+}
+
+@media print {
+    @page {
+        margin-top: 5.5cm; /* Adds a 2 cm margin at the top of every printed page */
+        /* margin-bottom: 1cm; Optional: add margins on other sides as needed */
+        margin-left: 1cm;
+        margin-right: 1cm;
+    }
+
+    body {
+        margin: 0; /* Remove any default body margin to avoid double margins */
+    }
+
+    /* Optional: You can set other adjustments if needed */
+    .transcript-container {
+        page-break-after: always; /* Ensure each transcript starts on a new page */
+    }
 }
