@@ -40,17 +40,17 @@
             <table class="course-details">
                 <thead>
                     <tr>
-                        <th  >Course No.</th>
+                        <th style="padding-left: 5px;" >Course No.</th>
                         <th >Course Title</th>
                         <th  >Unit</th>
                         <th >Grade</th>
                         <th >Special Symbols</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody style="padding: 3px;">
                     <% student.courses.forEach(function(course) { %>
                     <tr>
-                        <td style="width: 20%;"><%= course.code %></td>
+                        <td style="width: 17%; padding-left: 5px;"><%= course.code %></td>
                         <td ><%= course.title %></td>
                         <td ><%= course.unit %></td>
                         <td><%= course.grade %></td>
@@ -65,10 +65,10 @@
 
         <!-- SPI, CPI -->
         <table>
-            <tr style="border:1px solid black; display: flex; justify-content: space-between; padding-right: 18vw; padding-left: 1vw;" >
+            <tr style="border:1px solid black; display: flex; justify-content: space-between; padding-right: 20vw; padding-left: 1vw;" >
                 <td style="border:none;"> <strong> Result </strong></td>
-                <td style=" display:flex; margin-right: 22vw; border:none;gap:3vw;"> <strong> SPI</strong> <%= student.spi %></td>
-                <td style="display: flex; border:none;gap:3vw;"> <strong> CPI</strong> <%= student.cpi %></td>
+                <td style=" display:flex; margin-right: 27vw; border:none;gap:2vw;"> <strong> SPI</strong> <%= student.spi %></td>
+                <td style="display: flex; border:none;gap:2vw;"> <strong> CPI</strong> <%= student.cpi %></td>
                 
                 <!-- <td style="border:none;"><%= student.cpi %></td> -->
                
@@ -92,7 +92,7 @@
             <table>
                 
                     <tr>
-                        <td> <strong> Grading Points </strong> </td>
+                        <td style="width: 17%;"> <strong> Grading Points </strong> </td>
                         <td class="GPSP"><p>O=10 (Distinguished), A+=10 (Outstanding), A=9 (Excellent), B+=8 (Very Good),</p><p>B=7 (Good), C+=6 (Average), C=5(Below Average), D+=4(Marginal),</p><p>D=3 (Poor), F=2(Very Poor), I=0 (Incomplete), S=0 (Satisfactory),</p><p>X=0 (Unsatisfactory)</p></td>
                     </tr>
                     <tr>
