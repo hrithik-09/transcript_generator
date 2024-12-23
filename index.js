@@ -1,41 +1,49 @@
-import express from "express";
-import bodyParser from "body-parser";
-import multer from 'multer';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import xlsx from 'xlsx';
+const express = require("express");
+const bodyParser = require("body-parser");
+const multer = require("multer");
+const path = require("path");
+const xlsx = require("xlsx");
+const fs = require("fs");
+const { app: electronApp } = require("electron"); 
+
+const isPackaged = electronApp ? electronApp.isPackaged : false;
+const baseDir = isPackaged ? path.join(process.resourcesPath, "app") : __dirname;
+const uploadsDir = isPackaged
+  ? path.join(electronApp.getPath("userData"), "uploads")
+  : path.join(baseDir, "uploads");
+
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir, { recursive: true });
+}
 
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static("public"));
+app.use(express.static(path.join(baseDir, "public")));
+
+app.set("view engine", "ejs");
+app.set("views", path.join(baseDir, "views"));
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-      cb(null, './uploads');
+    cb(null, uploadsDir);
   },
   filename: (req, file, cb) => {
-      cb(null, file.originalname);
-  }
+    cb(null, file.originalname);
+  },
 });
 const upload = multer({ storage: storage });
 
-
-app.set('view engine', 'ejs');
-app.set('views', path.join(path.dirname(fileURLToPath(import.meta.url)), 'views'));
-
-
-app.get('/', (req, res) => {
-  res.render('index.ejs');
+app.get("/", (req, res) => {
+  res.render("index.ejs");
 });
 
-
-app.post('/upload', upload.single('file'), async (req, res) => {
+app.post("/upload", upload.single("file"), async (req, res) => {
   try {
-    const excelFilePath = path.join(process.cwd(), req.file.path);
-    
+    const excelFilePath = path.join(uploadsDir, req.file.filename);
+
 
     const workbook = xlsx.readFile(excelFilePath);
     const sheetName = workbook.SheetNames[0]; 
@@ -83,8 +91,6 @@ app.post('/upload', upload.single('file'), async (req, res) => {
       academicYear: req.body.academicYear,
       issueDate: formattedDate  
     };
-    // console.log(JSON.stringify(students, null, 2));  
-    // console.log(req.body);
     
     res.render('transcript.ejs', { students: students, academicDetails: academicDetails });
 
@@ -98,3 +104,5 @@ app.post('/upload', upload.single('file'), async (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+module.exports=app;

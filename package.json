@@ -2,9 +2,10 @@
   "name": "utility",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron .",
+    "serve": "node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +20,9 @@
     "pg": "^8.13.0",
     "url": "^0.11.4",
     "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "electron": "^24.0.0",
+    "electron-packager": "^17.1.2"
   }
 }
