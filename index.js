@@ -59,21 +59,21 @@ app.post("/upload", upload.single("file"), async (req, res) => {
         rollNumber: row[1], 
         name: row[2],       
         courses: [],
-        spi: row[worksheet[0].indexOf('SPI')],
-        cpi: row[worksheet[0].indexOf('CPI')] 
+        spi: parseFloat(row[worksheet[0].indexOf('SPI')]).toFixed(1),
+        cpi: parseFloat(row[worksheet[0].indexOf('CPI')]).toFixed(1) 
       };
       
       
-      let totalCreditIndex = worksheet[0].indexOf('TOTAL CREDIT');
-      
-      for (let col = 3; col < totalCreditIndex; col=col+5) {  
-        if (row[col + 3] && row[col + 3] !== '') {
+      let totalCreditIndex = worksheet[0].indexOf('TU');
+      let spiIndex = worksheet[0].indexOf('SPI');
+      for (let col = 3; col <spiIndex; col=col+2) {  
+        if (row[col] && row[col] !== '-') {
           student.courses.push({
-            title: worksheet[0][col],
-            code: worksheet[1][col],   
+            title: worksheet[1][col],
+            code: worksheet[0][col],   
             unit: worksheet[2][col], 
-            grade: row[col+3],
-            remarks:row[col]               
+            grade: row[col],
+            remarks:row[col+1] == '-'?'':row[col+1]              
           });
         }
       }
