@@ -24,12 +24,17 @@ body {
     margin: 0; /* Remove margin to ensure tables are joined vertically */
     border-collapse: collapse; /* Collapse borders for seamless join */
 }
+/* .spi-cpi-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+} */
 
 .student-details {
     /* height: 5vh; */
     font-size:9pt;
    
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 .less-bold{
     padding:none;

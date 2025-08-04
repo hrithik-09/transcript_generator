@@ -59,8 +59,31 @@ app.post("/upload", upload.single("file"), async (req, res) => {
         rollNumber: row[1], 
         name: row[2],       
         courses: [],
-        spi: parseFloat(row[worksheet[0].indexOf('SPI')]).toFixed(1),
-        cpi: parseFloat(row[worksheet[0].indexOf('CPI')]).toFixed(1) 
+        spi1: parseFloat(row[worksheet[0].indexOf('SPI1')]).toFixed(1),
+        cpi1: parseFloat(row[worksheet[0].indexOf('CPI1')]).toFixed(1),
+        spi2: parseFloat(row[worksheet[0].indexOf('SPI2')]).toFixed(1),
+        cpi2: parseFloat(row[worksheet[0].indexOf('CPI2')]).toFixed(1),
+        spi3: parseFloat(row[worksheet[0].indexOf('SPI3')]).toFixed(1),
+        spi4: parseFloat(row[worksheet[0].indexOf('SPI4')]).toFixed(1),
+        spi5: parseFloat(row[worksheet[0].indexOf('SPI5')]).toFixed(1),
+        spi6: parseFloat(row[worksheet[0].indexOf('SPI6')]).toFixed(1),
+        spi7: parseFloat(row[worksheet[0].indexOf('SPI7')]).toFixed(1),
+        spi8: parseFloat(row[worksheet[0].indexOf('SPI8')]).toFixed(1),
+        sspi1: isNaN(parseFloat(row[worksheet[0].indexOf('SumSPI1')])) ? '-' : parseFloat(row[worksheet[0].indexOf('SumSPI1')]).toFixed(1),
+        sspi2: isNaN(parseFloat(row[worksheet[0].indexOf('SumSPI2')])) ? '-' : parseFloat(row[worksheet[0].indexOf('SumSPI2')]).toFixed(1),
+        sspi3: isNaN(parseFloat(row[worksheet[0].indexOf('SumSPI3')])) ? '-' : parseFloat(row[worksheet[0].indexOf('SumSPI3')]).toFixed(1),
+        sspi4: isNaN(parseFloat(row[worksheet[0].indexOf('SumSPI4')])) ? '-' : parseFloat(row[worksheet[0].indexOf('SumSPI4')]).toFixed(1),
+        cpi3: parseFloat(row[worksheet[0].indexOf('CPI3')]).toFixed(1),
+        cpi4: parseFloat(row[worksheet[0].indexOf('CPI4')]).toFixed(1),
+        cpi5: parseFloat(row[worksheet[0].indexOf('CPI5')]).toFixed(1),
+        cpi6: parseFloat(row[worksheet[0].indexOf('CPI6')]).toFixed(1),
+        cpi7: parseFloat(row[worksheet[0].indexOf('CPI7')]).toFixed(1),
+        cpi8: parseFloat(row[worksheet[0].indexOf('CPI8')]).toFixed(1),
+        scpi1: isNaN(parseFloat(row[worksheet[0].indexOf('SumCPI1')])) ? '-' : parseFloat(row[worksheet[0].indexOf('SumCPI1')]).toFixed(1),
+        scpi2: isNaN(parseFloat(row[worksheet[0].indexOf('SumCPI2')])) ? '-' : parseFloat(row[worksheet[0].indexOf('SumCPI2')]).toFixed(1),
+        scpi3: isNaN(parseFloat(row[worksheet[0].indexOf('SumCPI3')])) ? '-' : parseFloat(row[worksheet[0].indexOf('SumCPI3')]).toFixed(1),
+        scpi4: isNaN(parseFloat(row[worksheet[0].indexOf('SumCPI4')])) ? '-' : parseFloat(row[worksheet[0].indexOf('SumCPI4')]).toFixed(1),
+        fcpi: parseFloat(row[worksheet[0].indexOf('FinalCPI')]).toFixed(1)
       };
       
       
@@ -77,6 +100,7 @@ app.post("/upload", upload.single("file"), async (req, res) => {
           });
         }
       }
+      // console.log(student);
       
       students.push(student);
     }

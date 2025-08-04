@@ -64,16 +64,67 @@
         </div>
 
         <!-- SPI, CPI -->
-        <table>
+        <!-- <table>
             <tr style="border:1px solid black; display: flex; justify-content: space-between; padding-right: 20vw; padding-left: 1vw;" >
                 <td style="border:none;"> <strong> Result </strong></td>
                 <td style=" display:flex; margin-right: 27vw; border:none;gap:2vw;"> <strong> SPI</strong> <%= student.spi %></td>
                 <td style="display: flex; border:none;gap:2vw;"> <strong> CPI</strong> <%= student.cpi %></td>
-                
-                <!-- <td style="border:none;"><%= student.cpi %></td> -->
-               
             </tr>
-        </table>
+        </table> -->
+          
+
+          
+        <table style="width: 100%; text-align: center; border-collapse: collapse;">
+    <tr>
+        <th style="padding: 6px;">Semester</th>
+        <th style="padding: 6px; width: 5%;">I</th>
+        <th style="padding: 6px; width: 5%;">II</th>
+        <th style="padding: 6px; width: 3%;">Summer</th>
+        <th style="padding: 6px; width: 5%;">III</th>
+        <th style="padding: 6px; width: 5%;">IV</th>
+        <th style="padding: 6px; width: 3%;">Summer</th>
+        <th style="padding: 6px; width: 5%;">V</th>
+        <th style="padding: 6px; width: 5%;">VI</th>
+        <th style="padding: 6px; width: 3%;">Summer</th>
+        <th style="padding: 6px; width: 5%;">VII</th>
+        <th style="padding: 6px; width: 5%;">VIII</th>
+        <th style="padding: 6px; width: 3%;">Summer</th>
+        <th style="padding: 6px; width: 8%;">Final CPI</th>
+    </tr>
+    <tr>
+        <td style="padding: 6px;"><strong>SPI</strong></td>
+        <td style="padding: 6px;"><%= student.spi1 %></td>
+        <td style="padding: 6px;"><%= student.spi2 %></td>
+        <td style="padding: 6px;"><%= student.sspi1 %></td>
+        <td style="padding: 6px;"><%= student.spi3 %></td>
+        <td style="padding: 6px;"><%= student.spi4 %></td>
+        <td style="padding: 6px;"><%= student.sspi2 %></td>
+        <td style="padding: 6px;"><%= student.spi5 %></td>
+        <td style="padding: 6px;"><%= student.spi6 %></td>
+        <td style="padding: 6px;"><%= student.sspi3 %></td>
+        <td style="padding: 6px;"><%= student.spi7 %></td>
+        <td style="padding: 6px;"><%= student.spi8 %></td>
+        <td style="padding: 6px;"><%= student.sspi4 %></td>
+        <td style="padding: 6px;" rowspan="2"><%= student.fcpi %></td>
+    </tr>
+    <tr>
+        <td style="padding: 6px;"><strong>CPI</strong></td>
+        <td style="padding: 6px;"><%= student.cpi1 %></td>
+        <td style="padding: 6px;"><%= student.cpi2 %></td>
+        <td style="padding: 6px;"><%= student.scpi1 %></td>
+        <td style="padding: 6px;"><%= student.cpi3 %></td>
+        <td style="padding: 6px;"><%= student.cpi4 %></td>
+        <td style="padding: 6px;"><%= student.scpi2 %></td>
+        <td style="padding: 6px;"><%= student.cpi5 %></td>
+        <td style="padding: 6px;"><%= student.cpi6 %></td>
+        <td style="padding: 6px;"><%= student.scpi3 %></td>
+        <td style="padding: 6px;"><%= student.cpi7 %></td>
+        <td style="padding: 6px;"><%= student.cpi8 %></td>
+        <td style="padding: 6px;"><%= student.scpi4 %></td>
+        <!-- Removed the final CPI cell here as it's merged above -->
+    </tr>
+</table>
+
         <!-- <div class="performance-details">
             <table>
                 <tr>
@@ -131,6 +182,9 @@
            <table class="yeda">
             <tr >
                 <td id="last-row"> <span>Minimum Graduating CPI: 5.0</span> <span>Maximum Graduating CPI: 10.0</span></td>
+            </tr>
+            <tr >
+                <td id="last-row"> <span>Student has successfully completed the programme.</span></td>
             </tr>
            </table>
         </div>
